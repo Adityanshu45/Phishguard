@@ -1,0 +1,145 @@
+/* Container and Card */
+.signup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif; /* Clean modern font */
+}
+
+.signup-card {
+   background: linear-gradient(
+    180deg,
+    #0b1220 0%,
+    #0f172a 60%,
+    #020617 100%
+    );
+
+  border-radius: 14px;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 1px rgba(56, 189, 248, 0.15);
+
+  padding: 2.5rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  color: white;
+}
+
+.signup-card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.signup-card p {
+  color: #94a3b8; /* Muted gray text */
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Input Groups */
+.input-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+.input-group input {
+  background: rgba(30, 41, 59, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+}
+
+.input-group input::placeholder {
+  color: #475569;
+}
+
+
+/* The Gradient Button */
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    #06b6d4 0%,
+    #6366f1 50%,
+    #a855f7 100%
+  );
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-bottom: 1.5rem;
+}
+
+.signup-btn:hover {
+  opacity: 0.9;
+}
+
+/* Footer Link */
+.signin-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.signin-text a {
+  color: #22d3ee;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* close button */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.close-btn:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
