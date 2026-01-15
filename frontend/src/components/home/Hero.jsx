@@ -64,8 +64,12 @@ function Hero() {
       setUrl("");
     } catch (err) {
       setLoading(false);
-      toast.error("Please login first", { position: "bottom-left" });
-      navigate("/login", { state: { backgroundLocation: location } });
+      if (err.response?.status === 401) {
+        toast.error("Please login first", { position: "bottom-left" });
+        navigate("/login", { state: { backgroundLocation: location } });
+      } else {
+        toast.error("Server waking up, please try again");
+      }
     } finally {
       setLoading(false);
     }
