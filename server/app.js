@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: true,
+    origin: "https://phishguard-blond.vercel.app",
     credentials: true,
   })
 );

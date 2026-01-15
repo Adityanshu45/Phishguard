@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+axios.defaults.withCredentials = true; //This tells the browser:“Always send cookies with requests”
 
 function Navbar() {
   const navigate = useNavigate();

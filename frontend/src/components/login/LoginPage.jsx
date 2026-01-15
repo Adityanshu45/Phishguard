@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+axios.defaults.withCredentials = true; //This tells the browser:“Always send cookies with requests”
 import { ToastContainer, toast } from "react-toastify";
 
 import "./Login.css";

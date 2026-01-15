@@ -3,8 +3,16 @@ const {createSecretToken} = require("../utils/SecretToken.js");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
+const cookieOptions = {
+  httpOnly: true,
+  secure: true,        // required on HTTPS (Vercel + Render)
+  sameSite: "none",    // required for cross-domain
+};
+
 
 module.exports.Signup = async (req, res, next) => {
+  
+  
   try {
     const { email, password, username } = req.body;
     const existingUser = await User.findOne({ email });
@@ -20,11 +28,7 @@ module.exports.Signup = async (req, res, next) => {
 
     const token = createSecretToken(user._id);
 
-    res.cookie("token", token, {
-      withCredentials: true,
-      httpOnly: false,
-      secure: process.env.NODE_ENV === "production"
-    });
+    res.cookie("token", token, cookieOptions);
     res
       .status(201)
       .json({ message: "User signed in successfully", success: true, user });
@@ -54,10 +58,7 @@ module.exports.Login = async (req, res) => {
     }
 
     const token = createSecretToken(user._id);
-    res.cookie("token", token, {
-      httpOnly: true,
-      sameSite: "lax",
-    });
+    res.cookie("token", token, cookieOptions);
 
     return res.status(200).json({
       success: true,
@@ -106,10 +107,7 @@ module.exports.checkAuth = async (req, res) => {
 // ✅ LOGOUT USER
 module.exports.logout = (req, res) => {
   res
-    .clearCookie("token", {
-      httpOnly: true,
-      sameSite: "lax",
-    })
+    .clearCookie("token",cookieOptions)
     .status(200)
     .json({
       success: true,
