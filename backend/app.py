@@ -8,7 +8,13 @@ from utils.feature_extraction import extract_feature
 
 # Initialize Flask application
 app = Flask(__name__)
-CORS(app)
+CORS(
+    app,
+    resources={r"/*": {
+        "origins": ["https://phishguard-blond.vercel.app"]
+    }},
+    supports_credentials=True
+)
 
 
 
