@@ -40,7 +40,7 @@ function Hero() {
       setError("");
 
       const response = await axios.post(
-        "http://localhost:5000/predict",
+        "https://phishguard-7ud1.onrender.com/predict",
         { url },
         { headers: { "Content-Type": "application/json" } }
       );
