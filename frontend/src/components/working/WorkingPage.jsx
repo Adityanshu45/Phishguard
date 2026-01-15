@@ -1,6 +1,6 @@
 import React from "react";
-import Hero from "./Hero";
-import Behind from "./Behind";
+import Hero from "./Hero.jsx";
+import Behind from "./Behind.jsx";
 
 function Working() {
   return (
