@@ -46,7 +46,7 @@ function SignupPage() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/signup",
+        "https://phishguard-server-ffti.onrender.com/signup",
         {
           username: form.username,
           email: form.email,

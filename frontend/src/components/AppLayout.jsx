@@ -5,7 +5,7 @@ import Footer from "./Footer.jsx";
 import HomePage from "./home/HomePage.jsx";
 import WorkingPage from "./working/WorkingPage.jsx";
 import FeaturesPage from "./features/FeaturesPage.jsx";
-import SignupPage from "./signUp/SignUpPage.jsx";
+import SignupPage from "./signup/SignupPage.jsx";
 import AboutPage from "./about/AboutPage.jsx";
 import LoginPage from "./login/LoginPage.jsx";
 import { ToastContainer } from "react-toastify";

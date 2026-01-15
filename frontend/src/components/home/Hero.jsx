@@ -21,9 +21,12 @@ function Hero() {
 
   const handleCheckUrlButton = async () => {
     try {
-      const authRes = await axios.get("http://localhost:8080/me", {
-        withCredentials: true,
-      });
+      const authRes = await axios.get(
+        "https://phishguard-server-ffti.onrender.com/me",
+        {
+          withCredentials: true,
+        }
+      );
 
       if (!authRes.data.isAuthenticated) {
         toast.error("Please login first", { position: "bottom-left" });
@@ -46,7 +49,7 @@ function Hero() {
       );
 
       await axios.post(
-        "http://localhost:8080/scan/save",
+        "https://phishguard-server-ffti.onrender.com/scan/save",
         {
           url: url,
           result: response.data.prediction, // or response.data.result

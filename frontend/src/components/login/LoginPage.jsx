@@ -35,7 +35,7 @@ function LoginPage() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/login",
+        "https://phishguard-server-ffti.onrender.com/login",
         {
           ...form,
         },

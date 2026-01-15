@@ -15,7 +15,7 @@ function Navbar() {
   //  Check login status when Navbar loads
   useEffect(() => {
     axios
-      .get("http://localhost:8080/me", {
+      .get("https://phishguard-server-ffti.onrender.com/me", {
         withCredentials: true,
       })
       .then((res) => {
@@ -38,7 +38,7 @@ function Navbar() {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:8080/logout",
+        "https://phishguard-server-ffti.onrender.com/logout",
         {},
         { withCredentials: true }
       );

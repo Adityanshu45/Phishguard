@@ -13,15 +13,21 @@ const Profile = () => {
     const fetchData = async () => {
       try {
         //  Get logged-in user
-        const userRes = await axios.get("http://localhost:8080/me", {
-          withCredentials: true,
-        });
+        const userRes = await axios.get(
+          "https://phishguard-server-ffti.onrender.com/me",
+          {
+            withCredentials: true,
+          }
+        );
         setUser(userRes.data.user);
 
         //  Get scan history
-        const scanRes = await axios.get("http://localhost:8080/scan/history", {
-          withCredentials: true,
-        });
+        const scanRes = await axios.get(
+          "https://phishguard-server-ffti.onrender.com/scan/history",
+          {
+            withCredentials: true,
+          }
+        );
         setScans(scanRes.data);
 
         setLoading(false);
