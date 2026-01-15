@@ -7,19 +7,21 @@ const app=express();
 const cors = require("cors")
 const mongoose=require("mongoose");
 const cookieParser = require("cookie-parser");
+
 const authRoute = require("./routes/AuthRoute");
 const scanRoutes = require("./routes/ScanRoute");
+
 const mongoUrl = process.env.ATLAS_DB_URL;
+const Port = process.env.PORT || 5000;
 
-
+// middleware
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: true,
     credentials: true,
   })
 );
@@ -38,12 +40,11 @@ async function main() {
 };
 
 
-
+//routes
 app.use("/scan", scanRoutes);
-
 app.use("/", authRoute);
 
-app.listen(8080,()=>{
-    console.log("Server Start");
-
+// start server
+app.listen(Port,()=>{
+    console.log("Server Started on Port" ,Port);
 });
